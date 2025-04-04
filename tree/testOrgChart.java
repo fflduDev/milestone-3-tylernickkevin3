@@ -4,11 +4,11 @@ public class testOrgChart {
 
 	public static void main(String[] args) {
 
-		
+
 
 		// fill the org chart
 		OrgChart company = new OrgChartImpl();
-		
+
 		Employee e1 = new Employee("Jack", 1001, "CEO");
 		Employee e2 = new Employee("Katie", 1002, "Project Manager");
 		Employee e3 = new Employee("Ben", 1021, "Designer");
@@ -19,7 +19,8 @@ public class testOrgChart {
 		Employee e8 = new Employee("Jack B", 1324, "Coder");
 		Employee e9 = new Employee("Layla", 1253, "Intern");
 		Employee e10 = new Employee("Jade", 1923, "CEO Secretary");
-		
+
+		company.clear();
 		company.addRoot(e1);
 		company.addDirectReport(e1, e2);
 		company.addDirectReport(e1, e5);
@@ -30,23 +31,26 @@ public class testOrgChart {
 		company.addDirectReport(e5, e7);
 		company.addDirectReport(e7, e8);
 		company.addDirectReport(e7, e9);
-		
+
 		// show it depth first
+		System.out.println("Org Chart (DFS) of the company is:");
 		company.showOrgChartDepthFirst();
-		
+
 		// show breadth first
+		System.out.println("\nOrg Chart (BFS) of the company is:");
 		company.showOrgChartBreadthFirst();
-		
+
 		// and remove some people
 		company.removeEmployee(e4);
 		company.removeEmployee(e5);
-		
+
 		// show it depth first
+		System.out.println("\nOrg Chart (DFS) of the company is:");
 		company.showOrgChartDepthFirst();
-		
+
 		// show breadth first
+		System.out.println("\nOrg Chart (BFS) of the company is:");
 		company.showOrgChartBreadthFirst();
-		
 
 	}
 
